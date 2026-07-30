@@ -23,4 +23,3 @@ va_libero_train_cfg.warmup_steps = 10
 va_libero_train_cfg.batch_size = 1 
 va_libero_train_cfg.gradient_accumulation_steps = 10
 va_libero_train_cfg.num_steps = 5000
-
