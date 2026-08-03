@@ -32,6 +32,7 @@ dependencies = [
     "easydict",
     "flash_attn",
     "numpy>=1.26.4,<2",
+    "wandb",
 ]
 
 [project.optional-dependencies]
