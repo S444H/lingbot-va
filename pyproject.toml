@@ -9,7 +9,8 @@ description = "LingBot-VA: A Pragmatic VA Foundation Model"
 authors = [
     { name = "Robbyant Team", email = "fengchang.ll@antgroup.com" }
 ]
-license = { file = "LICENSE.txt" }
+license = "Apache-2.0"
+license-files = ["LICENSE.txt"]
 readme = "README.md"
 requires-python = ">=3.10,<4.0"
 dependencies = [
@@ -20,6 +21,7 @@ dependencies = [
     "tokenizers>=0.21.4",
     "tqdm",
     "imageio",
+    "opencv-python==4.11.0.86",
     "easydict",
     "flash_attn",
     "numpy>=1.26.4,<2"
@@ -43,11 +45,8 @@ huggingface = "https://github.com/Robbyant"
 modelscope = "https://github.com/Robbyant"
 discord = "https://github.com/Robbyant"
 
-[tool.setuptools]
-packages = ["lingbot_va"]
-
-[tool.setuptools.package-data]
-"lingbot_va" = ["**/*.py"]
+[tool.setuptools.packages.find]
+include = ["wan_va*"]
 
 [tool.black]
 line-length = 88
@@ -57,5 +56,3 @@ profile = "black"
 
 [tool.mypy]
 strict = true
-
-
