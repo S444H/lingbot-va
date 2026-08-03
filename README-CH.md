@@ -109,9 +109,11 @@ conda activate LingBot-va-1.0
 pip install torch==2.9.0 torchvision==0.24.0 torchaudio==2.9.0 --index-url https://download.pytorch.org/whl/cu126
 ```
 ```bash
-pip install websockets einops diffusers==0.36.0 transformers==4.55.4 accelerate msgpack opencv-python matplotlib ftfy easydict
 pip install flash-attn --no-build-isolation
 ```
+```bash
+pip install -e .
+``` 
 
 
 ## ⚠️ 重要：`attn_mode` 配置
