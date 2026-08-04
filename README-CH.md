@@ -115,25 +115,7 @@ pip install flash-attn --no-build-isolation
 pip install -e .
 ``` 
 
-### wandb
-```bash
-wandb login
-``` 
-```bash
-export WANDB_API_KEY="$(
-  python -c 'import netrc; print(netrc.netrc().authenticators("api.wandb.ai")[2])'
-)"
-export WANDB_BASE_URL="https://api.wandb.ai"
-export WANDB_TEAM_NAME="your"
-export WANDB_PROJECT="set"
-```
-#### 验证
-```bash
-printf 'WANDB_API_KEY: %s\n' "$([[ -n "$WANDB_API_KEY" ]] && echo 已设置 || echo 未设置)"
-printf 'WANDB_BASE_URL: %s\n' "$WANDB_BASE_URL"
-printf 'WANDB_TEAM_NAME: %s\n' "$WANDB_TEAM_NAME"
-printf 'WANDB_PROJECT: %s\n' "$WANDB_PROJECT"
-```
+
 
 ## ⚠️ 重要：`attn_mode` 配置
 
@@ -427,12 +409,32 @@ your_dataset/
 
 ### 训练
 
+#### wandb
+```bash
+wandb login
+``` 
+```bash
+export WANDB_API_KEY="$(
+  python -c 'import netrc; print(netrc.netrc().authenticators("api.wandb.ai")[2])'
+)"
+export WANDB_BASE_URL="https://api.wandb.ai"
+export WANDB_TEAM_NAME="your"
+export WANDB_PROJECT="self set"
+```
+##### 验证
+```bash
+printf 'WANDB_API_KEY: %s\n' "$([[ -n "$WANDB_API_KEY" ]] && echo 已设置 || echo 未设置)"
+printf 'WANDB_BASE_URL: %s\n' "$WANDB_BASE_URL"
+printf 'WANDB_TEAM_NAME: %s\n' "$WANDB_TEAM_NAME"
+printf 'WANDB_PROJECT: %s\n' "$WANDB_PROJECT"
+```
+
 ```bash
 # RoboTwin
-NGPU=8 CONFIG_NAME='robotwin_train' bash script/run_va_posttrain.sh
+NGPU=8 CONFIG_NAME='robotwin_train' SAVE_ROOT='/self_set_path' bash script/run_va_posttrain.sh
 
 # LIBERO
-NGPU=8 CONFIG_NAME='libero_train' bash script/run_va_posttrain.sh
+NGPU=8 CONFIG_NAME='libero_train' SAVE_ROOT='/self_set_path' bash script/run_va_posttrain.sh
 ```
 
 为了获得更好的训练性能，请使用更大的全局批量大小（例如 32 或 64）。如果 GPU 资源有限，可以增加 `gradient_accumulation_steps`，以实现更大的有效批量大小。
