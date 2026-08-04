@@ -296,7 +296,7 @@ NGPU=1 CONFIG_NAME='robotwin_i2av' bash script/run_launch_va_server_sync.sh
 pip install lerobot==0.3.3 scipy wandb --no-deps
 ```
 ```bash
-pip install "datasets==3.6.0"
+pip install "datasets"
 ```
 ```bash
 pip install "jsonlines>=4.0.0" "av>=14.2.0"
