@@ -6,7 +6,7 @@ import os
 va_libero_train_cfg = EasyDict(__name__='Config: VA libero train')
 va_libero_train_cfg.update(va_libero_cfg)
 
-va_libero_train_cfg.dataset_path = '/path/to/your/dataset'
+va_libero_train_cfg.dataset_path = '/datacc05/shenhao/datasets/libero-long-lerobot'
 va_libero_train_cfg.empty_emb_path = os.path.join(va_libero_train_cfg.dataset_path, 'empty_emb.pt')
 va_libero_train_cfg.enable_wandb = True
 va_libero_train_cfg.load_worker = 16
