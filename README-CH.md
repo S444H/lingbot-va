@@ -115,6 +115,25 @@ pip install flash-attn --no-build-isolation
 pip install -e .
 ``` 
 
+### wandb
+```bash
+wandb login
+``` 
+```bash
+export WANDB_API_KEY="$(
+  python -c 'import netrc; print(netrc.netrc().authenticators("api.wandb.ai")[2])'
+)"
+export WANDB_BASE_URL="https://api.wandb.ai"
+export WANDB_TEAM_NAME="your"
+export WANDB_PROJECT="set"
+```
+#### 验证
+```bash
+printf 'WANDB_API_KEY: %s\n' "$([[ -n "$WANDB_API_KEY" ]] && echo 已设置 || echo 未设置)"
+printf 'WANDB_BASE_URL: %s\n' "$WANDB_BASE_URL"
+printf 'WANDB_TEAM_NAME: %s\n' "$WANDB_TEAM_NAME"
+printf 'WANDB_PROJECT: %s\n' "$WANDB_PROJECT"
+```
 
 ## ⚠️ 重要：`attn_mode` 配置
 

@@ -16,13 +16,6 @@ if [ $# -ne 0 ]; then
     overrides="$*"
 fi
 
-
-
-export WANDB_API_KEY="${WANDB_API_KEY:?请先设置 WANDB_API_KEY}"
-export WANDB_BASE_URL="${WANDB_BASE_URL:-https://api.wandb.ai}"
-export WANDB_TEAM_NAME="${WANDB_TEAM_NAME:?请先设置 WANDB_TEAM_NAME}"
-export WANDB_PROJECT="${WANDB_PROJECT:-lingbot-va-libero}"
-
 ## node setting
 num_gpu=${NGPU}
 master_port=${MASTER_PORT}
