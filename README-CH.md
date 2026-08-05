@@ -433,15 +433,15 @@ printf 'WANDB_PROJECT: %s\n' "$WANDB_PROJECT"
 # RoboTwin
 NGPU=8 \
 CONFIG_NAME='robotwin_train' \
-SAVE_ROOT='/datacc05/shenhao/models/checkpoints/robotwin_train' \
-WANDB_DIR='/datacc05/shenhao/models/outputs/wandb/robotwin_train' \
+SAVE_ROOT='/your_Path' \
+WANDB_DIR='/your_Path' \
 bash script/run_va_posttrain.sh
 
 # LIBERO
 NGPU=8 \
 CONFIG_NAME='libero_train' \
-SAVE_ROOT='/datacc05/shenhao/models/checkpoints/libero_train' \
-WANDB_DIR='/datacc05/shenhao/models/outputs/wandb/libero_train' \
+SAVE_ROOT='/your_Path' \
+WANDB_DIR='/your_Path' \
 bash script/run_va_posttrain.sh
 ```
 
