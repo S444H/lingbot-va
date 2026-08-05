@@ -431,10 +431,18 @@ printf 'WANDB_PROJECT: %s\n' "$WANDB_PROJECT"
 
 ```bash
 # RoboTwin
-NGPU=8 CONFIG_NAME='robotwin_train' SAVE_ROOT='/self_set_path' bash script/run_va_posttrain.sh
+NGPU=8 \
+CONFIG_NAME='robotwin_train' \
+SAVE_ROOT='/datacc05/shenhao/models/checkpoints/robotwin_train' \
+WANDB_DIR='/datacc05/shenhao/models/outputs/wandb/robotwin_train' \
+bash script/run_va_posttrain.sh
 
 # LIBERO
-NGPU=8 CONFIG_NAME='libero_train' SAVE_ROOT='/self_set_path' bash script/run_va_posttrain.sh
+NGPU=8 \
+CONFIG_NAME='libero_train' \
+SAVE_ROOT='/datacc05/shenhao/models/checkpoints/libero_train' \
+WANDB_DIR='/datacc05/shenhao/models/outputs/wandb/libero_train' \
+bash script/run_va_posttrain.sh
 ```
 
 为了获得更好的训练性能，请使用更大的全局批量大小（例如 32 或 64）。如果 GPU 资源有限，可以增加 `gradient_accumulation_steps`，以实现更大的有效批量大小。

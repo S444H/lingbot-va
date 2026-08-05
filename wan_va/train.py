@@ -50,7 +50,7 @@ import gc
 class Trainer:
     def __init__(self, config):
         if config.enable_wandb and config.rank == 0:
-            wandb_dir = Path("/datacc05/shenhao/models/outputs/wandb")  # self set
+            wandb_dir = Path(config.wandb_dir)
             wandb_dir.mkdir(parents=True, exist_ok=True)
             wandb.login(host=os.environ['WANDB_BASE_URL'], key=os.environ['WANDB_API_KEY'])
             self.wandb = wandb
@@ -521,6 +521,7 @@ def run(args):
 
     if args.save_root is not None:
         config.save_root = args.save_root
+    config.wandb_dir = args.wandb_dir
 
     if rank == 0:
         logger.info(f"Using config: {args.config_name}")
@@ -544,6 +545,12 @@ def main():
         type=str,
         default=None,
         help="Root directory for saving checkpoints",
+    )
+    parser.add_argument(
+        "--wandb-dir",
+        type=str,
+        default=None,
+        help="Directory for storing local W&B files",
     )
 
     args = parser.parse_args()
