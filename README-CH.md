@@ -435,6 +435,8 @@ NGPU=8 \
 CONFIG_NAME='robotwin_train' \
 SAVE_ROOT='/your_Path' \
 WANDB_DIR='/your_Path' \
+WAN22_PRETRAINED_MODEL_NAME_OR_PATH='/your_Path' \
+DATASET_PATH='/your_Path' \
 bash script/run_va_posttrain.sh
 
 # LIBERO
@@ -442,6 +444,8 @@ NGPU=8 \
 CONFIG_NAME='libero_train' \
 SAVE_ROOT='/your_Path' \
 WANDB_DIR='/your_Path' \
+WAN22_PRETRAINED_MODEL_NAME_OR_PATH='/your_Path' \
+DATASET_PATH='/your_Path' \
 bash script/run_va_posttrain.sh
 ```
 
