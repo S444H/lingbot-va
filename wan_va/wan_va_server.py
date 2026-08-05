@@ -677,6 +677,8 @@ class VA_Server:
 def run(args):    
     
     config = VA_CONFIGS[args.config_name]
+    if args.wan22_pretrained_model_name_or_path is not None:
+        config.wan22_pretrained_model_name_or_path = args.wan22_pretrained_model_name_or_path
     port = config.port if args.port is None else args.port
     if args.save_root is not None:
         config.save_root = args.save_root
@@ -720,6 +722,12 @@ def main():
         type=str,
         default=None,
         help='save root'
+    )
+    parser.add_argument(
+        "--wan22-pretrained-model-name-or-path",
+        type=str,
+        default=None,
+        help="Path to the pretrained Wan 2.2 model",
     )
     args = parser.parse_args()
     run(args)

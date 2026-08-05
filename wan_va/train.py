@@ -521,6 +521,11 @@ def run(args):
 
     if args.save_root is not None:
         config.save_root = args.save_root
+    if args.wan22_pretrained_model_name_or_path is not None:
+        config.wan22_pretrained_model_name_or_path = args.wan22_pretrained_model_name_or_path
+    if args.dataset_path is not None:
+        config.dataset_path = args.dataset_path
+        config.empty_emb_path = os.path.join(args.dataset_path, "empty_emb.pt")
     config.wandb_dir = args.wandb_dir
 
     if rank == 0:
@@ -551,6 +556,18 @@ def main():
         type=str,
         default=None,
         help="Directory for storing local W&B files",
+    )
+    parser.add_argument(
+        "--wan22-pretrained-model-name-or-path",
+        type=str,
+        default=None,
+        help="Path to the pretrained Wan 2.2 model",
+    )
+    parser.add_argument(
+        "--dataset-path",
+        type=str,
+        default=None,
+        help="Path to the training dataset",
     )
 
     args = parser.parse_args()

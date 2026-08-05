@@ -7,8 +7,6 @@ va_libero_cfg = EasyDict(__name__='Config: VA libero')
 va_libero_cfg.update(va_shared_cfg)
 va_shared_cfg.infer_mode = 'server'
 
-va_libero_cfg.wan22_pretrained_model_name_or_path = "/datacc05/shenhao/models/pretrained/lingbot-va-base"
-
 va_libero_cfg.attn_window = 30
 va_libero_cfg.frame_chunk_size = 4
 va_libero_cfg.env_type = 'none'
