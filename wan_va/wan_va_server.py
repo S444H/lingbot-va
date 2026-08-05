@@ -718,7 +718,7 @@ def main():
         help='(start) port'
     )
     parser.add_argument(
-        "--save_root",
+        "--save-root",
         type=str,
         default=None,
         help='save root'
