@@ -74,7 +74,7 @@ class MultiLatentLeRobotDataset(torch.utils.data.Dataset):
         num_init_worker=128,
     ):
         self._datasets = construct_lerobot_multi_processor(config, 
-                                                           num_init_worker, 
+                                                           num_init_worker,  # 8 --> 128
                                                            )
         self.item_id_to_dataset_id, self.acc_dset_num = (
             self._get_item_id_to_dataset_id()
