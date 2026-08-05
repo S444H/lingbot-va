@@ -10,7 +10,7 @@ PORT=${PORT:-"1106"}
 LOG_RANK=${LOG_RANK:-"0"}
 TORCHFT_LIGHTHOUSE=${TORCHFT_LIGHTHOUSE:-"http://localhost:29510"}
 CONFIG_NAME=${CONFIG_NAME:-"robotwin"}
-SAVE_ROOT=${SAVE_ROOT:-"./output"}  # self set the save root path, default is ./output
+SAVE_ROOT=${SAVE_ROOT:-"./inference_output"}  # self set the save root path, default is ./output
 WAN22_PRETRAINED_MODEL_NAME_OR_PATH=${WAN22_PRETRAINED_MODEL_NAME_OR_PATH:-"./models/pretrained/lingbot-va-base"}
 
 
