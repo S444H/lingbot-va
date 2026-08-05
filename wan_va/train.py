@@ -50,12 +50,14 @@ import gc
 class Trainer:
     def __init__(self, config):
         if config.enable_wandb and config.rank == 0:
+            wandb_dir = Path("/datacc05/shenhao/models/outputs/wandb")  # self set
+            wandb_dir.mkdir(parents=True, exist_ok=True)
             wandb.login(host=os.environ['WANDB_BASE_URL'], key=os.environ['WANDB_API_KEY'])
             self.wandb = wandb
             self.wandb.init(
                 entity=os.environ["WANDB_TEAM_NAME"],
                 project=os.getenv("WANDB_PROJECT", "va_robotwin"),
-                # dir=log_dir,
+                dir=str(wandb_dir),
                 config=config,
                 mode="online",
                 name='test_lln'
