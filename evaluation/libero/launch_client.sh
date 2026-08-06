@@ -6,4 +6,4 @@ python evaluation/libero/client.py \
     --port 29056 \
     --test-num 50 \
     --task-range $START $END \
-    --out-dir outputs/libero
+    --out-dir inference_output/libero
