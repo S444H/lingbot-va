@@ -250,7 +250,8 @@ bash evaluation/robotwin/launch_client_multigpus.sh ${save_root} ${task_group_id
 ```bash
 # 服务器
 bash evaluation/libero/launch_server.sh
-
+```
+```bash
 # 客户端
 bash evaluation/libero/launch_client.sh
 ```
