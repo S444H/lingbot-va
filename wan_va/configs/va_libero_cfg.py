@@ -10,6 +10,9 @@ va_shared_cfg.infer_mode = 'server'
 va_libero_cfg.attn_window = 30
 va_libero_cfg.frame_chunk_size = 4
 va_libero_cfg.env_type = 'none'
+# A 24 GB GPU doesn't have enough headroom for the transformer KV cache when
+# the VAE and text encoder remain resident on CUDA during evaluation.
+va_libero_cfg.enable_offload = True
 
 va_libero_cfg.height = 128
 va_libero_cfg.width = 128
