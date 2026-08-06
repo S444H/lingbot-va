@@ -3,6 +3,11 @@ save_root='visualization/'
 mkdir -p $save_root
 
 # e.g.
+#模型目录/
+#├── vae/
+#├── tokenizer/
+#├── text_encoder/
+#└── transformer/
 wan22_pretrained_model_name_or_path='/datacc05/shenhao/models/checkpoints/libero_train/checkpoints/checkpoint_step_5000'
 
 python -m torch.distributed.run \
